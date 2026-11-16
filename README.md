@@ -43,25 +43,43 @@ smart-exam/
 6. 모의종료와 기록 리스트 (기능 6)
 7. 최종 점검 → Claude Code가 찾은 차이(기록 표 열 제목 "결과" → "pass 여부") 수정 → deploy 폴더 배포
 
-## VS Code 작업 화면 캡쳐
+## VS Code + Claude Code 진행 과정 캡쳐 (단계별)
 
-### 1) 프로젝트 구조와 문제 데이터 (questions.js, 220문제)
-![프로젝트 구조](screenshots/01_프로젝트구조_questions.js.png)
+> VS Code에서 `smart-exam` 폴더를 열고, Claude Code 대화창에 단계별 지시문([docs/claude-code-steps.md](docs/claude-code-steps.md))을 붙여 넣어 진행한 화면입니다.
 
-### 2) 3단계 데이터 검증 + 5단계 채점 검증 (VS Code 터미널)
-`node validate.js` → 220문제 / 객관식 200 / 단답형 20, id·보기·정답·잔여 문구 검사 통과  
-`node test-grade.js` → 17개 정답 fail, 18개 정답 pass, 단답형 공백·대소문자 무시 확인
-![데이터·채점 검증](screenshots/02_데이터검증_채점검증_터미널.png)
+### 준비) 프로젝트 구조 — smart-exam 폴더, PDF 2개, questions.js
+![프로젝트 구조](screenshots/step0_프로젝트구조.png)
 
-### 3) 7단계 Claude Code 최종 점검 — 기능01~06 요구사항 대조표
-![Claude Code 최종 점검](screenshots/03_ClaudeCode_최종점검_기능대조표.png)
+### 1단계) 전체 작업 이해시키기 — 4개 파일 역할 설명
+![1단계](screenshots/step1_전체작업이해.png)
 
-### 4) Claude Code가 찾은 차이 수정 ("결과" → "pass 여부", index.html·deploy/index.html)
-![Claude Code 수정 완료](screenshots/04_ClaudeCode_수정완료_index.html.png)
+### 2단계) PDF → questions.js 문제 데이터 변환 확인 (G-001, C-001, S-001)
+![2단계](screenshots/step2_PDF문제데이터변환.png)
 
-### 5) 실행 화면 (스마트폰 폭 360px)
+### 3단계) 데이터 검증 — 220문제, id·보기·정답·잔여 문구 모두 통과
+![3단계](screenshots/step3_데이터검증.png)
+
+### 4단계) 문제 화면과 기능01~03 — 코드 위치와 360px 실측
+![4단계](screenshots/step4_문제화면_기능01-03.png)
+
+### 5단계) 미응답 알림과 채점(기능04~05) — `node test-grade.js` 17개 fail / 18개 pass
+![5단계](screenshots/step5_미응답알림_채점.png)
+
+### 3·5단계 터미널) `node validate.js`, `node test-grade.js` 실행 결과
+![터미널 검증](screenshots/step3-5_터미널검증.png)
+
+### 6단계) 모의종료와 기록 리스트(기능06)
+![6단계](screenshots/step6_모의종료_기록리스트.png)
+
+### 7단계) 최종 점검 — 기능01~06 요구사항 대조표
+![7단계 최종 점검](screenshots/step7_최종점검_기능대조표.png)
+
+### 7단계) Claude Code가 찾은 차이 수정 — 기록 표 열 제목 "결과" → "pass 여부"
+![7단계 수정](screenshots/step7_수정완료_pass여부.png)
+
+### 7단계) 실행 화면 (스마트폰 폭 360px)
 시작 → 답 확인 → 미응답 알림 → 채점 결과 → 기록 리스트
-![실행 화면](screenshots/05_실행화면_스마트폰360px.png)
+![실행 화면](screenshots/step7_실행화면_스마트폰360px.png)
 
 ## 사용 방법
 
