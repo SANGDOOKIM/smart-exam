@@ -45,29 +45,23 @@ smart-exam/
 
 ## VS Code 작업 화면 캡쳐
 
-### 1) 프로젝트 구조와 문제 데이터(questions.js)
+### 1) 프로젝트 구조와 문제 데이터 (questions.js, 220문제)
 ![프로젝트 구조](screenshots/01_프로젝트구조_questions.js.png)
 
-### 2) 3단계 데이터 검증 — `node validate.js`
-220문제 / 객관식 200 / 단답형 20, id·보기·정답·잔여 문구 검사 모두 통과
-![데이터 검증](screenshots/03_데이터검증_validate.png)
+### 2) 3단계 데이터 검증 + 5단계 채점 검증 (VS Code 터미널)
+`node validate.js` → 220문제 / 객관식 200 / 단답형 20, id·보기·정답·잔여 문구 검사 통과  
+`node test-grade.js` → 17개 정답 fail, 18개 정답 pass, 단답형 공백·대소문자 무시 확인
+![데이터·채점 검증](screenshots/02_데이터검증_채점검증_터미널.png)
 
-### 3) 5단계 채점 검증 — `node test-grade.js`
-17개 정답 → fail, 18개 정답 → pass, 단답형 공백·대소문자 무시 확인
-![채점 검증](screenshots/05_채점검증_test-grade.png)
+### 3) 7단계 Claude Code 최종 점검 — 기능01~06 요구사항 대조표
+![Claude Code 최종 점검](screenshots/03_ClaudeCode_최종점검_기능대조표.png)
 
-### 4) 7단계 Claude Code 최종 점검 — 기능01~06 요구사항 대조표
-![Claude Code 최종 점검](screenshots/07_ClaudeCode_최종점검.png)
+### 4) Claude Code가 찾은 차이 수정 ("결과" → "pass 여부", index.html·deploy/index.html)
+![Claude Code 수정 완료](screenshots/04_ClaudeCode_수정완료_index.html.png)
 
-### 5) Claude Code가 제안한 수정(diff)을 확인하고 승인
-![Claude Code 수정 diff](screenshots/08_ClaudeCode_수정diff.png)
-
-### 6) 수정 완료 (index.html, deploy/index.html)
-![Claude Code 수정 완료](screenshots/09_ClaudeCode_수정완료.png)
-
-### 7) 실행 화면 (스마트폰 폭 360px)
+### 5) 실행 화면 (스마트폰 폭 360px)
 시작 → 답 확인 → 미응답 알림 → 채점 결과 → 기록 리스트
-![실행 화면](screenshots/10_실행화면_스마트폰360px.png)
+![실행 화면](screenshots/05_실행화면_스마트폰360px.png)
 
 ## 사용 방법
 
