@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>스마트공장 수준확인 심사원 모의고사</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- 시작 화면 -->
+  <section id="screen-start" class="screen center">
+    <div class="card">
+      <h1>스마트공장 수준확인<br>심사원 모의고사</h1>
+      <p class="sub">전체 220문제 중 25문제를 무작위로 출제합니다.<br>18문제 이상 맞히면 pass</p>
+      <button id="btn-start" class="btn primary block">모의고사 시작</button>
+      <button id="btn-history" class="btn outline block">기록 보기</button>
+    </div>
+  </section>
+
+  <!-- 문제 풀이 화면 -->
+  <section id="screen-quiz" class="screen quiz hidden">
+    <header class="topbar">
+      <div class="progress"><span id="q-no">1</span> / 25</div>
+      <div class="actions">
+        <button id="btn-check" class="btn outline sm">답 확인</button>
+        <button id="btn-next" class="btn primary sm">Next</button>
+        <button id="btn-end" class="btn danger sm">모의종료</button>
+      </div>
+    </header>
+    <main class="quiz-body">
+      <div id="question-area" class="question-area"></div>
+      <div id="answer-area" class="answer-area">
+        <p class="placeholder">[답 확인]을 누르면 정답이 여기에 표시됩니다.</p>
+      </div>
+    </main>
+  </section>
+
+  <!-- 기록 리스트 화면 -->
+  <section id="screen-history" class="screen hidden">
+    <div class="history-wrap">
+      <h2>모의고사 기록</h2>
+      <table class="history">
+        <thead><tr><th>날짜</th><th>회차</th><th>맞춘 개수</th><th>pass 여부</th></tr></thead>
+        <tbody id="history-body"></tbody>
+      </table>
+      <p id="history-empty" class="sub hidden">아직 기록이 없습니다.</p>
+      <button id="btn-restart" class="btn primary block">새 모의고사 시작</button>
+      <button id="btn-home" class="btn outline block">처음 화면</button>
+    </div>
+  </section>
+
+  <!-- 공통 알림창 -->
+  <div id="modal" class="modal hidden" role="dialog" aria-modal="true">
+    <div class="modal-box">
+      <div id="modal-msg" class="modal-msg"></div>
+      <div class="modal-btns">
+        <button id="modal-cancel" class="btn outline hidden">취소</button>
+        <button id="modal-ok" class="btn primary">확인</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="questions.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
